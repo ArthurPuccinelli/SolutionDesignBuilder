@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import Button from '@/components/ui/Button';
 
@@ -13,7 +15,7 @@ export default function ManagePlaceholdersPage() {
       <p className="text-gray-700 mb-4">
         Defina como os dados do formulário de oportunidade serão mapeados para os placeholders
         nos templates de apresentação. Por exemplo, <code>{`{{customer_name}}`}</code> no template
-        será substituído pelo campo "Nome do Cliente" do formulário.
+        será substituído pelo campo &quot;Nome do Cliente&quot; do formulário.
       </p>
 
       {/* Placeholder para lista de regras */}

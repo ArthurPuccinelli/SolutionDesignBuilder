@@ -1,5 +1,26 @@
 // Placeholder for AI Service Integration
 
+interface OpportunityData {
+  opportunityName: string;
+  customerName: string;
+  // Add other relevant fields from the opportunity form
+  // For example:
+  // discoveryNotes?: string;
+  // compellingReason?: string;
+  // budget?: number;
+  // timeline?: string;
+}
+
+interface AnalysisResult {
+  sentiment: string;
+  keyThemes: string[];
+  potentialRisks: string[];
+  extractedEntities: {
+    productsMentioned: string[];
+    stakeholders: string[];
+  };
+}
+
 interface RefineTextRequest {
   text: string;
   context?: string; // e.g., "discovery notes", "compelling reason"
@@ -45,8 +66,8 @@ export const refineTextWithAI = async (
  * Simulates calling an external AI API to classify text or extract entities.
  */
 export const analyzeOpportunityDataWithAI = async (
-  opportunityData: any // Replace 'any' with a proper interface for OpportunityData
-): Promise<any> => {
+  opportunityData: OpportunityData
+): Promise<AnalysisResult> => {
   console.log('[AIService] analyzeOpportunityDataWithAI called with:', opportunityData.opportunityName);
 
   await new Promise(resolve => setTimeout(resolve, 1500));
